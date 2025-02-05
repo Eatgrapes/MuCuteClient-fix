@@ -6,7 +6,6 @@ import com.mucheng.mucute.client.game.data.Effect
 import org.cloudburstmc.protocol.bedrock.packet.BedrockPacket
 import org.cloudburstmc.protocol.bedrock.packet.MobEffectPacket
 import org.cloudburstmc.protocol.bedrock.packet.PlayerAuthInputPacket
-import com.mucheng.mucute.client.game.entity.LocalPlayer
 
 class HasteModule : Module("haste", ModuleCategory.Effect) {
 

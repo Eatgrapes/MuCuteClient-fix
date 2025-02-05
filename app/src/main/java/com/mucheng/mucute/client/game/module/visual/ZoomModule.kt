@@ -12,7 +12,7 @@ import org.cloudburstmc.protocol.bedrock.packet.UpdateAbilitiesPacket
 
 class ZoomModule : Module("zoom", ModuleCategory.Visual) {
 
-   // private val zoom by floatValue("Zoom",0.42f,0.42f..20.0f)
+    // private val zoom by floatValue("Zoom",0.42f,0.42f..20.0f)
 
     // Packet to enable zooming
     private val enableZoomPacket = UpdateAbilitiesPacket().apply {

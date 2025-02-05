@@ -3,12 +3,12 @@ package com.mucheng.mucute.client.game.module.misc
 import com.mucheng.mucute.client.game.Module
 import com.mucheng.mucute.client.game.ModuleCategory
 import kotlinx.coroutines.DelicateCoroutinesApi
-import org.cloudburstmc.protocol.bedrock.packet.BedrockPacket
-import org.cloudburstmc.protocol.bedrock.packet.PlayerAuthInputPacket
-import org.cloudburstmc.protocol.bedrock.packet.TextPacket
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.cloudburstmc.protocol.bedrock.packet.BedrockPacket
+import org.cloudburstmc.protocol.bedrock.packet.PlayerAuthInputPacket
+import org.cloudburstmc.protocol.bedrock.packet.TextPacket
 import java.util.concurrent.ConcurrentLinkedQueue
 import kotlin.random.Random
 
@@ -56,16 +56,12 @@ class DesyncModule : Module("desync", ModuleCategory.Misc) {
 
     private fun sendChatMessage(message: String) {
         if (!isEnabled) {
-            println("DesyncModule: Module is not enabled. Skipping message send.")
             return  // Don't send messages if the module is disabled
         }
 
         if (!isSessionCreated) {
-            println("DesyncModule: Session is null. Skipping chat message.")
             return
         }
-
-        println("DesyncModule: Preparing to send message: $message")
 
         // Prepare the chat packet
         val chatPacket = TextPacket().apply {
@@ -76,15 +72,8 @@ class DesyncModule : Module("desync", ModuleCategory.Misc) {
         }
 
         // Send the message
-        try {
-            session.clientBound(chatPacket)
-            println("DesyncModule: Chat message sent successfully!")
-        } catch (e: Exception) {
-            println("DesyncModule: Error sending message - ${e.message}")
-        }
+        session.clientBound(chatPacket)
     }
-
-
 
 
 }

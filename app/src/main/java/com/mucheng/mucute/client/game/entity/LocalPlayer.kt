@@ -8,7 +8,6 @@ import com.mucheng.mucute.client.game.util.removeNetInfo
 import org.cloudburstmc.math.vector.Vector3f
 import org.cloudburstmc.protocol.bedrock.data.AuthoritativeMovementMode
 import org.cloudburstmc.protocol.bedrock.data.SoundEvent
-import org.cloudburstmc.protocol.bedrock.data.inventory.ItemData
 import org.cloudburstmc.protocol.bedrock.data.inventory.transaction.InventoryTransactionType
 import org.cloudburstmc.protocol.bedrock.packet.AnimatePacket
 import org.cloudburstmc.protocol.bedrock.packet.BedrockPacket
@@ -55,7 +54,8 @@ class LocalPlayer(val session: GameSession) : Player(0L, 0L, UUID.randomUUID(), 
             runtimeEntityId = packet.runtimeEntityId
             uniqueEntityId = packet.uniqueEntityId
 
-            movementServerAuthoritative = packet.authoritativeMovementMode != AuthoritativeMovementMode.CLIENT
+            movementServerAuthoritative =
+                packet.authoritativeMovementMode != AuthoritativeMovementMode.CLIENT
             packet.authoritativeMovementMode = AuthoritativeMovementMode.SERVER
             inventoriesServerAuthoritative = packet.isInventoriesServerAuthoritative
             blockBreakServerAuthoritative = packet.isServerAuthoritativeBlockBreaking

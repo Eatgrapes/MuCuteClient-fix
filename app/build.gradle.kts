@@ -20,6 +20,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //noinspection ChromeOsAbiSupport
+            abiFilters += setOf("arm64-v8a", "armeabi-v7a")
+        }
     }
     signingConfigs {
         create("shared") {
@@ -78,18 +83,12 @@ android {
     }
 }
 
-configurations.all {
-    // Do not uncomment this, it's necessary to run relay
-    // exclude(group = "com.nukkitx", module = "natives")
-}
-
 dependencies {
     implementation(files("libs/MuCuteRelay.jar"))
     debugImplementation(platform(libs.log4j.bom))
     debugImplementation(libs.log4j.api)
     debugImplementation(libs.log4j.core)
     implementation(libs.minecraftauth)
-    implementation(libs.nukkitx.natives)
     implementation(libs.kotlinx.serialization.json.jvm)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

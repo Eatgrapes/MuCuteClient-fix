@@ -8,10 +8,9 @@ espressoCore = "3.6.1"
 kotlinxSerializationJsonJvm = "1.7.3"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
-composeBom = "2025.01.00"
-materialIconsExtended = "1.7.6"
-natives = "1.0.3"
-navigationCompose = "2.8.5"
+composeBom = "2025.01.01"
+materialIconsExtended = "1.7.7"
+navigationCompose = "2.8.6"
 minecraft-auth = "4.1.1"
 log4j = "2.24.2"
 
@@ -37,7 +36,7 @@ minecraftauth = { group = "net.raphimc", name = "MinecraftAuth", version.ref = "
 log4j-bom = { group = "org.apache.logging.log4j", name = "log4j-bom", version.ref = "log4j" }
 log4j-api = { group = "org.apache.logging.log4j", name = "log4j-api" }
 log4j-core = { group = "org.apache.logging.log4j", name = "log4j-core" }
-nukkitx-natives = { module = "com.nukkitx:natives", version.ref = "natives" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
